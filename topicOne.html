@@ -27,18 +27,20 @@
 		var nameGreeting;
 		name = prompt ("Please enter your name: ");
 		document.getElementById("welcomeMessage").innerHTML = `Welcome ${nameGreeting} , you have proved you know how to assign text to a variable!`;
-		
-		var student = {'name' : "", 'age' : 0};
+	</script>
+	<script>
+	    	var student = {'name' : "", 'age' : 0};
 		function addToArray() {
 			var form = document.getElementById("getInfo");
 			student.name = form.elements[0].value;
 			student.age = form.elements[1].value;
 		}
-		
+	</script>
+	<script>
 		function displayStudents(){
 			for (var i in student)
 			{
-				document.getElementById("listStudents").innerHTML = i;
+				document.getElementById("listStudents").innerHTML = i.value;
 			}
 		}		
 	</script>
