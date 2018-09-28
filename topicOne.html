@@ -28,9 +28,9 @@
 		name = prompt ("Please enter your name: ");
 		document.getElementById("welcomeMessage").innerHTML = `Welcome ${nameGreeting} , you have proved you know how to assign text to a variable!`;
 		
+		var student = {'name' : "", 'age' : 0};
 		function addToArray() {
 			var form = document.getElementById("getInfo");
-			var student = {'name' : "", 'age' : 0};
 			student.name = form.elements[0].value;
 			student.age = form.elements[1].value;
 		}
