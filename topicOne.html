@@ -30,9 +30,9 @@
 		
 		function addToArray() {
 			var form = document.getElementById("getInfo");
-			var student = {};
-			student['name'] = form.elements[0].value;
-			student['age'] = form.elements[1].value;
+			var student = {'name' : "", 'age' : 0};
+			student.name = form.elements[0].value;
+			student.age = form.elements[1].value;
 		}
 		
 		function displayStudents(){
