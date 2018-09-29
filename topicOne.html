@@ -29,20 +29,29 @@
 		document.getElementById("welcomeMessage").innerHTML = `Welcome ${nameGreeting} , you have proved you know how to assign text to a variable!`;
 	</script>
 	<script>
-	    	var student = {'name' : "", 'age' : 0};
+	    	/*var student = {'name' : "", 'age' : 0};
 		function addToArray() {
 			var form = document.getElementById("getInfo");
 			student.name = form.elements[0].value;
 			student.age = form.elements[1].value;
+		}*/
+		function addToArray() {
+			  var info = document.getElementById("getInfo").elements;
+			  var studentsArray = new Object();
+			  for (var i = 0; i < info.length; i++) {
+			       studentsArray[info[i].id] = info[i].value;
+			  }
 		}
 	</script>
 	<script>
 		function displayStudents(){
-			for (var i in student)
+			var list = "";
+			for (var i in studentsArray)
 			{
-				document.getElementById("listStudents").innerHTML = i.value;
-			}
-		}		
+				    list+=i + "," + studentsArray[i] + " ";
+ 			}
+			 document.getElementById("listStudents").innerHTML = list;
+		}	
 	</script>
 	
 	</body>
