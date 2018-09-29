@@ -26,12 +26,21 @@
 		<p id="listStudents"></p>
 		
 	</body>
+	
 	<script>
+	/************************************************************************
+	* The below script will use VARIABLE nameGreeting to display the name 
+	* input by the user in header 2.
+	************************************************************************/
 		var nameGreeting;
 		nameGreeting = prompt ("Please enter your name: ");
 		document.getElementById("welcomeMessage").innerHTML = `Welcome ${nameGreeting} , you have proved you know how to assign text to a variable!`;
 	</script>
 	<script>
+	/************************************************************************
+	* The below function will create an associative array with student's info 
+	* provided by the form.
+	************************************************************************/
 		var studentsArray = [];	
 		function addToArray(){
 			studentsArray["Name"] = document.getElementById("getInfo").elements[0].value;
@@ -39,6 +48,11 @@
 		}
 	</script>
 	<script>
+	/************************************************************************
+	* The below function will receive the studentsArray by parameter and display 
+	* it as part of an HTML paragraph.
+	* Loops and conditional statements are used to achieve this.
+	*************************************************************************/
 		var list = "";
 		function displayStudents(studentsArray){
 			for (var key in studentsArray) {
