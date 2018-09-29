@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Explorando y Aprendiendo HTML">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+    <title>My Project</title>
+
+    <body>
+        <h1>2. Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h1>
+		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
+		
+		<p id="displayHeroes"></p>
+		
+		<script>
+			function Avenger(name, skill, sex){
+				this.name = name;
+				this.skill = skill;
+				this.sex = sex;
+			}
+			
+			var heroe = new Avenger("Iron Man", "Intelligence", "Male");	
+			
+			Avenger.prototype.age = 40;
+			
+			Avenger.prototype.presentation = function(){
+				return "I am " + heroe.name + ", and my greatest skill is " + heroe.skill + "<br>";
+			};
+			
+			document.getElementById("displayHeroes").innerHTML = heroe.presentation();
+			
+			
+		</script>
+		
+	</body>
+  </head>
+</html>  
