@@ -13,16 +13,27 @@
 		<p id="displayHeroes"></p>
 		
 		<script>
+			/************************************************************************
+			* The below function is an object creation function for an "Avenger".
+			* It has 3 properties.
+			************************************************************************/
 			function Avenger(name, skill, sex){
 				this.name = name;
 				this.skill = skill;
 				this.sex = sex;
 			}
-			
+			/************************************************************************
+			* Below, I'm instantiating a variable of the type Avenger.
+			************************************************************************/
 			var heroe = new Avenger("Iron Man", "Intelligence", "Male");	
-			
+			/************************************************************************
+			* Below, I add a new property by inheritance, using prototype.
+			************************************************************************/
 			Avenger.prototype.age = 40;
 			
+			/************************************************************************
+			* Below, also with prototype, I create a method for Avenger
+			************************************************************************/
 			Avenger.prototype.presentation = function(){
 				return "I am " + heroe.name + ", and my greatest skill is " + heroe.skill + "<br>";
 			};
