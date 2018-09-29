@@ -12,62 +12,48 @@
 		
 		
 		<form id="getInfo">
-			Name: <input type="text" name="name"><br>
-			Age:  <input type="text" name="age"><br><br>
+			Name: <input type="text" name="name">
+			<br>
+			Age:  <input type="text" name="age">
+			<br><br>
 	   	</form> 
 		
-		<button onclick="addToArray()">Add Student</button><br>
+		<button onclick="addToArray()">Add Student</button>
+		<br>
 		
-		<button onclick="displayStudents()">Display Students</button>
+		<button onclick="displayStudents(studentsArray)">Display Students</button>
 	    
 		<p id="listStudents"></p>
 		
-
+	</body>
 	<script>
 		var nameGreeting;
 		nameGreeting = prompt ("Please enter your name: ");
 		document.getElementById("welcomeMessage").innerHTML = `Welcome ${nameGreeting} , you have proved you know how to assign text to a variable!`;
 	</script>
 	<script>
-	    	/*var student = {'name' : "", 'age' : 0};
-		function addToArray() {
-			var form = document.getElementById("getInfo");
-			student.name = form.elements[0].value;
-			student.age = form.elements[1].value;
-		}*/
-		/*function addToArray() {
-			  var info = document.getElementById("getInfo").elements;
-			  var studentsArray = new Object();
-			  for (var i = 0; i < info.length; i++) {
-			       studentsArray[info[i].id] = info[i].value;
-			  }
-		}*/
+		var studentsArray = [];	
 		function addToArray(){
-			var x = document.forms;
-			var studentsArray = new Object();
-			for (var i=0;i<x.length;i++)
-			{
-				if (x == 0){
-				  var Name = x[i].name;
-				  studentsArray[Name] = x[i].value;
-				} else{
-				  var Age = x[i].age;
-				  studentsArray[Age] = x[i].value
-				}
-			}
+			studentsArray["Name"] = document.getElementById("getInfo").elements[0].value;
+			studentsArray["Age"] = document.getElementById("getInfo").elements[1].value;
 		}
 	</script>
 	<script>
+		var list = "";
 		function displayStudents(studentsArray){
-			var list = "";
-			for (var i in studentsArray)
-			{
-				    list+=i + "," + studentsArray[i] + " ";
- 			}
-			 document.getElementById("listStudents").innerHTML = list;
+			for (var key in studentsArray) {
+				list += key + " : " + studentsArray[key] + "<br>";				
+			}	
+			document.getElementById("listStudents").innerHTML = list;	
+			if (studentsArray["Age"] > 40){
+				list += "You are an old guy!" + "<br><br>";
+				document.getElementById("listStudents").innerHTML = list;
+			} else {
+				list += "You are really young!" + "<br><br>";
+				document.getElementById("listStudents").innerHTML = list;
+			}
+			
 		}	
 	</script>
-	
-	</body>
   </head>
 </html>
