@@ -12,8 +12,8 @@
 		
 		
 		<form id="getInfo">
-			Name: <input type="text" name="name" value=""><br>
-			Age:  <input type="text" name="age" value=""><br><br>
+			Name: <input type="text" name="name"><br>
+			Age:  <input type="text" name="age"><br><br>
 	   	</form> 
 		
 		<button onclick="addToArray()">Add Student</button><br>
@@ -35,12 +35,26 @@
 			student.name = form.elements[0].value;
 			student.age = form.elements[1].value;
 		}*/
-		function addToArray() {
+		/*function addToArray() {
 			  var info = document.getElementById("getInfo").elements;
 			  var studentsArray = new Object();
 			  for (var i = 0; i < info.length; i++) {
 			       studentsArray[info[i].id] = info[i].value;
 			  }
+		}*/
+		function addToArray(){
+			var x = document.forms;
+			var studentsArray = new Object();
+			for (var i=0;i<x.length;i++)
+			{
+				if (x == 0){
+				  var Name = x[i].name;
+				  studentsArray[Name] = x[i].value;
+				} else{
+				  var Age = x[i].age;
+				  studentsArray[Age] = x[i].value
+				}
+			}
 		}
 	</script>
 	<script>
