@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Explorando y Aprendiendo HTML">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+    <title>My Project</title>
+
+    <body>
+        <h1>3. JSON Parse, Stringify</h1>
+		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
+		
+		<p id="personalData"></p>
+
+		<script>
+			/************************************************************************
+			* Declaring a variable in JSON format
+			************************************************************************/
+			var jsonString = '{ "name":"Martin", "age":30, "country":"Uruguay"}';
+			
+			/************************************************************************
+			* Parsing the JSON string
+			************************************************************************/
+			var person = JSON.parse(jsonString);
+			
+			/*****************************************************************************
+			* Concat the person properties with text ot display a message in a paragraph
+			*****************************************************************************/
+			var display = "My name is " + person.name + ". I'm " + person.age + " years old and I'm from " + person.country + "<br>";
+ 			
+			document.getElementById("personalData").innerHTML = display;
+
+		</script>
+		
+		<!--************************************************************************
+		* In below script, I will revert the process by stringifying an object
+		************************************************************************-->
+		<script>
+			var 
+		
+		</script>
+		
+	</body>
+  </head>
+</html>  
