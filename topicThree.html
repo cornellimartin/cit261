@@ -10,7 +10,9 @@
         <h1>3. JSON Parse, Stringify</h1>
 		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
 		
-		<p id="personalData"></p>
+		<p id="parse"></p>
+        
+        <p id="stringify"></p>
 
 		<script>
 			/************************************************************************
@@ -24,11 +26,11 @@
 			var person = JSON.parse(jsonString);
 			
 			/*****************************************************************************
-			* Concat the person properties with text ot display a message in a paragraph
+			* Concat the person properties with text to display a message in a paragraph
 			*****************************************************************************/
 			var display = "My name is " + person.name + ". I'm " + person.age + " years old and I'm from " + person.country + "<br>";
  			
-			document.getElementById("personalData").innerHTML = display;
+			document.getElementById("parse").innerHTML = display;
 
 		</script>
 		
@@ -36,9 +38,13 @@
 		* In below script, I will revert the process by stringifying an object
 		************************************************************************-->
 		<script>
-			var 
-		
-		</script>
+			var person = {Name: "Martin", Age: 30, Country: "Uruguay"};
+            
+            var myString = JSON.stringify(person);
+            
+            document.getElementById("stringify").innerHTML = "This is the stringified object: " + myString;       
+            
+        </script>
 		
 	</body>
   </head>
