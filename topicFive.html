@@ -19,25 +19,29 @@
             <input type="radio" name="selection" value="fourteen">14<br>
             <input type="radio" name="selection" value="nineteen">19<br>
         </form>
-	    
+        
         <button onclick="handleClick()">Submit</button>
         
 		<script>
                 //Will use local storage to warn the user about last correct answer
-                if (localStorage.getItem("result") == null){
+            
+                //NOTE TO INSTRUCTOR: The idea is for you to play until you guess. Then, refresh the page and you should be told what was the last correct number.
+                if (localStorage.getItem("attempts") == null){
                     document.getElementById("personalData").innerHTML = "This is the first time you play!";
                 }else{
-                    document.getElementById("personalData").innerHTML = "Last time, correct option was: " + localStorage.getItem("result");
+                    document.getElementById("personalData").innerHTML = "Last time, you guessed in " + localStorage.getItem("attempts") + " attempts.";
                 }
                 var resultArray = ["three", "five", "twentyone", "fourteen", "nineteen"]; //Creating an array from which correct answer will be randomly chosen
                 var rand = resultArray[Math.floor(Math.random() * resultArray.length)]; // Random selection of correct result
-                localStorage.setItem("result", rand); // Storing current result for history purposes
+                var attempts = 0;
             
                 //Below, I will go through all the radio buttons until I find the checked one and assign its value variable selected.
                 var radioButtons = document.getElementsByName('selection'); 
                 var selected = '';
                 var previousOptions = [];
                 function handleClick(){        
+                    attempts = attempts + 1;
+                    localStorage.setItem("attempts", attempts); // Storing amount of attempts.
                     for (var i = 0, length = radioButtons.length; i < length; i++){
                          if (radioButtons[i].checked){
                             selected = radioButtons[i].value;
@@ -46,7 +50,9 @@
                     //By comparing variables selected and rand, I can determine if the guessed.
                     if(selected == rand){
                         alert("YOU GOT IT! Regarding the prize, I was just kidding...");
-                    }                    
+                    }else{
+                       alert("Oops, that was wrong. Please keep trying");
+                    }                  
                 }
 
 
