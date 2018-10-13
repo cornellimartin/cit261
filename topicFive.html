@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Explorando y Aprendiendo HTML">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+    <title>My Project</title>
+
+    <body>
+        <h1>5. Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h1>
+		<h2 id="welcomeMessage">Guess the correct number and win a prize!</h2>	
+		
+		<p id="personalData" style="color: red;" style="font-size:80px;" font></p><br>
+        
+        <form name="options">
+            <input type="radio" name="selection" value="three">3<br>
+            <input type="radio" name="selection" value="five">5<br>
+            <input type="radio" name="selection" value="twentyone">21<br>
+            <input type="radio" name="selection" value="fourteen">14<br>
+            <input type="radio" name="selection" value="nineteen">19<br>
+        </form>
+        
+        <button onclick="handleClick()">Submit</button>
+        
+		<script>
+                //Will use local storage to warn the user about last correct answer
+                if (localStorage.getItem("result") == null){
+                    document.getElementById("personalData").innerHTML = "This is the first time you play!";
+                }else{
+                    document.getElementById("personalData").innerHTML = "Last time, correct option was: " + localStorage.getItem("result");
+                }
+                var resultArray = ["three", "five", "twentyone", "fourteen", "nineteen"]; //Creating an array from which correct answer will be randomly chosen
+                var rand = resultArray[Math.floor(Math.random() * resultArray.length)]; // Random selection of correct result
+                localStorage.setItem("result", rand); // Storing current result for history purposes
+            
+                //Below, I will go through all the radio buttons until I find the checked one and assign its value variable selected.
+                var radioButtons = document.getElementsByName('selection'); 
+                var selected = '';
+                var previousOptions = [];
+                function handleClick(){        
+                    for (var i = 0, length = radioButtons.length; i < length; i++){
+                         if (radioButtons[i].checked){
+                            selected = radioButtons[i].value;
+                         }
+                    }
+                    //By comparing variables selected and rand, I can determine if the guessed.
+                    if(selected == rand){
+                        alert("YOU GOT IT! Regarding the prize, I was just kidding...");
+                    }                    
+                }
+
+
+		</script>
+		
+	</body>
+  </head>
+</html>  
