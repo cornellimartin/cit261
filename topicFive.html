@@ -25,7 +25,7 @@
 		<script>
                 //Will use local storage to warn the user about last correct answer
             
-                //NOTE TO INSTRUCTOR: The idea is for you to play until you guess. Then, refresh the page and you should be told what was the last correct number.
+                //NOTE TO INSTRUCTOR: The idea is for you to play until you guess. Once you guess, refresh the page and you'll be told the amount of attempts you took to guess last time you played.
                 if (localStorage.getItem("attempts") == null){
                     document.getElementById("personalData").innerHTML = "This is the first time you play!";
                 }else{
