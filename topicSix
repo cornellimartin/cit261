@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Explorando y Aprendiendo HTML">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+    <title>My Project</title>
+
+    <body>
+        <h1>6. DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h1>
+		<h2 id="welcomeMessage">Demonstration</h2>	
+		
+		<p id="addition" style="color: red;" style="font-size:80px;" font>Create a shopping list: </p>
+        
+        <ul id="shoppingList"></ul>
+        
+        <input type="text" id="itemName"><br>
+        <button onClick="addItem()">Add Item</button><br><br>
+        
+        <p id="removal" style="color: red;" style="font-size:80px;" font>Item to remove from list: </p>
+        
+        <input type="text" id="toRemove"><br>
+        <button onClick="removeItem()">Remove Item</button>
+      
+		<script>
+            //I will create a LI element for every item the user inputs.
+            //I will use appendChild to give a name (innerHTML value) to it.
+            //I will insert it in the UL.
+            var list = document.getElementById("shoppingList");
+            function addItem(){
+                var item = document.createElement("LI");
+                var name = document.createTextNode(document.getElementById("itemName").value);
+                item.appendChild(name);  
+                list.insertBefore(item, list.childNodes[0]);;
+            }
+            
+            //I will use removeChild to remove from the list whatever item the user inputs.
+            function removeItem(){
+                var remove = document.getElementById("toRemove").value;
+                for (i = 0; i < list.childNodes.length; i++){
+                    if (list.childNodes[i].innerHTML == remove){
+                        list.removeChild(list.childNodes[i]);
+                    }
+                }
+            }
+
+		</script>
+		
+	</body>
+  </head>
+</html>  
