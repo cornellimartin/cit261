@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Explorando y Aprendiendo HTML">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+    <title>My Project</title>
+
+    <body>
+        <h1>7. Manipulating CSS Class Properties Using JavaScript</h1>
+		<h2 id="welcomeMessage">Demonstration</h2>	
+		
+		<p id="styles" style="color: red;" style="font-size:80px;" font>CHANGING STYLES</p>
+        
+        <input type="text" id="color"><br>
+        <button onClick="changeColor()">Change Color</button><br><br>
+      
+		<script>
+            var newColor = "";
+                        
+            function changeColor(){
+                newColor = document.getElementById("color").value;
+                document.getElementById("styles").style.color = newColor;
+            }
+
+		</script>
+		
+	</body>
+  </head>
+</html>  
