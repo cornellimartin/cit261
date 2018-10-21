@@ -1,0 +1,7 @@
+div {
+    background-image: url("capture.jpg");
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 200px;
+}
