@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="MyProject">
+    <title>My Project</title>
+
+    <body>
+        <h1>10. HTML5 Tags - Video, Audio, and Canvas</h1>
+		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>
+        
+        <p>Video tag test:</p><br>
+        
+		
+	   <video width="320" height="240" controls>
+          <source src="Wildlife.mp4" type="video/mp4">
+       </video>
+        
+       <br><p>Audio tag test:</p><br>
+        
+        <audio controls>
+          <source src="testAudio.mp3" type="audio/mp3">
+        </audio>
+        
+        <br><p>Canvas tag test:</p><br>
+        
+        <canvas id="myCanvas" width="300" height="231"></canvas><br>
+        <button onclick="addImage()">Get Image</button>
+        
+        <script>
+            function addImage()
+            {
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                var img = new Image();
+                img.src = 'capture.jpg'
+                img.onload = function(){
+                    ctx.drawImage(img,10,10);
+                }
+            }
+                
+        </script>
+        
+
+	
+	</body>
+  </head>
+</html>  
