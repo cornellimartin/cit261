@@ -3,30 +3,46 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Explorando y Aprendiendo HTML">
-	<link rel="stylesheet" type="text/css" href="customize.css">
+	<link rel="stylesheet" type="text/css" href="myStyleSheet.css">
     <title>My Project</title>
 
     <body>
-        <h1>4. Using XMLHTTPRequest to Consume a JSON Web Service</h1>
-		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
+        <h1>8. Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</h1>
+		<h2 id="welcomeMessage">Demonstration</h2>	
 		
-		<p id="personalData"></p>
-
+		<p id="styles" style="color: red;" style="font-size:80px;" font>CHANGING STYLES</p>
+        
+        <div id="shape" onmouseover="modify()"></div>
+        
+        <button onclick="handleClick()" style="margin-left: 450px">Change Shape</button>
+      
 		<script>
-			/***************************************************************************************************
-			* Most common structure for XMLHTTPRequest object, from https://www.w3schools.com/xml/xml_http.asp
-			***************************************************************************************************/
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-				   // Typical action to be performed when the document is ready:
-                    var ipAddress = JSON.parse(xhttp.responseText);
-                    
-                    document.getElementById("personalData").innerHTML = "Your IP address is: " + ipAddress.ip ;
-				}
-			};
-			xhttp.open("GET", "https://ipinfo.io/json", true);
-			xhttp.send();
+            function modify(){
+                      var element = document.getElementById("shape");
+                      var pos = 0;
+                      var fromTop = 200;
+                      var speed = setInterval(move, 5);
+                      function move() {
+                            if (pos == 360) {
+                              clearInterval(speed);
+                            } else {
+                              pos++; 
+                              fromTop++;
+                              element.style.transform = "rotate(" + pos + "deg)";
+                              element.style.left = pos + 'px';
+                              element.style.top = fromTop + 'px';
+                            }
+                      }
+            }
+            function handleClick(){
+                  var element = document.getElementById("shape");
+                  element.style.background = "transparent";
+                  element.style.height = "0px";
+                  element.style.width = "0px";
+                  element.style.borderLeft = "50px solid transparent";
+                  element.style.borderRight = "50px solid transparent";
+                  element.style.borderBottom = "100px solid green";
+            }
 		</script>
 		
 	</body>
