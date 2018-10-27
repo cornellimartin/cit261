@@ -12,8 +12,39 @@
 		
 		<p id="styles" style="color: red;" style="font-size:80px;" font>CHANGING STYLES</p>
         
-        <div>capture.jpg</div>       
-
+        <div id="shape" onmouseover="modify()"></div>
+        
+        <button onclick="handleClick()" style="margin-left: 450px">Change Shape</button>
+      
+		<script>
+            function modify(){
+                      var element = document.getElementById("shape");
+                      var pos = 0;
+                      var fromTop = 200;
+                      var speed = setInterval(move, 5);
+                      function move() {
+                            if (pos == 360) {
+                              clearInterval(speed);
+                            } else {
+                              pos++; 
+                              fromTop++;
+                              element.style.transform = "rotate(" + pos + "deg)";
+                              element.style.left = pos + 'px';
+                              element.style.top = fromTop + 'px';
+                            }
+                      }
+            }
+            function handleClick(){
+                  var element = document.getElementById("shape");
+                  element.style.background = "transparent";
+                  element.style.height = "0px";
+                  element.style.width = "0px";
+                  element.style.borderLeft = "50px solid transparent";
+                  element.style.borderRight = "50px solid transparent";
+                  element.style.borderBottom = "100px solid green";
+            }
+		</script>
+		
 	</body>
   </head>
 </html>  
