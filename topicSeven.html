@@ -10,19 +10,19 @@
         <h1>7. Manipulating CSS Class Properties Using JavaScript</h1>
 		<h2 id="welcomeMessage">Demonstration</h2>	
 		
+	    	<!--The below paragraph will be used to change font color with JavaScript-->
 		<p id="styles" style="color: red;" style="font-size:80px;" font>CHANGING STYLES</p>
         
         <input type="text" id="color"><br>
-        <button onClick="changeColor()">Change Color</button><br><br>
+        <button onClick="changeColor()">Change Color</button><br><br> <!--Button to call changeColor function-->
       
 		<script>
-            var newColor = "";
-                        
-            function changeColor(){
-                newColor = document.getElementById("color").value;
-                document.getElementById("styles").style.color = newColor;
-            }
+		    var newColor = ""; // Create variable for the new color.
 
+		    function changeColor(){
+			newColor = document.getElementById("color").value; // Assign paragraph element's value to a variable.
+			document.getElementById("styles").style.color = newColor; // Change color to the variable.
+		    }
 		</script>
 		
 	</body>
