@@ -8,7 +8,7 @@
     <body>
         <h1>10. HTML5 Tags - Video, Audio, and Canvas</h1>
 		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>
-        
+        <!--The HTML part use paragraphs as comments of the code-->
         <p>Video tag test:</p><br>
         
 		
@@ -30,12 +30,12 @@
         <script>
             function addImage()
             {
-                var c = document.getElementById("myCanvas");
-                var ctx = c.getContext("2d");
-                var img = new Image();
-                img.src = 'Capture.JPG'
+                var c = document.getElementById("myCanvas"); //Assign Canvas element to avariable.
+                var ctx = c.getContext("2d"); //Use it to create a new variable which receives a getContext("2d") object with its properties and methods.
+                var img = new Image(); //Create new image.
+                img.src = 'Capture.JPG' //Use image in folder as the source.
                 img.onload = function(){
-                    ctx.drawImage(img,10,10);
+                    ctx.drawImage(img,10,10); //Draw the image by calling drawImage method with image, width and height as parmeters
                 }
             }
                 
