@@ -12,37 +12,39 @@
 		
 		<p id="styles" style="color: red;" style="font-size:80px;" font>CHANGING STYLES</p>
         
+	<!--The below div will be a square shape. By hovering over it, it will call the modify functio, which will start the transition-->
         <div id="shape" onmouseover="modify()"></div>
         
+	<!--This button provides a nice animation, changing the shape and color of the div-->
         <button onclick="handleClick()" style="margin-left: 450px">Change Shape</button>
       
 		<script>
-            function modify(){
-                      var element = document.getElementById("shape");
-                      var pos = 0;
-                      var fromTop = 200;
-                      var speed = setInterval(move, 5);
-                      function move() {
-                            if (pos == 360) {
-                              clearInterval(speed);
-                            } else {
-                              pos++; 
-                              fromTop++;
-                              element.style.transform = "rotate(" + pos + "deg)";
-                              element.style.left = pos + 'px';
-                              element.style.top = fromTop + 'px';
-                            }
-                      }
-            }
-            function handleClick(){
-                  var element = document.getElementById("shape");
-                  element.style.background = "transparent";
-                  element.style.height = "0px";
-                  element.style.width = "0px";
-                  element.style.borderLeft = "50px solid transparent";
-                  element.style.borderRight = "50px solid transparent";
-                  element.style.borderBottom = "100px solid green";
-            }
+		    function modify(){
+			      var element = document.getElementById("shape"); //Get div element
+			      var pos = 0; // This variable is to be incremented later.
+			      var fromTop = 200; // Distance from top of the site
+			      var speed = setInterval(move, 5); //Setting movement speed
+			      function move() {
+				    if (pos == 360) { 
+				      clearInterval(speed);  //If it completely rotated, stop.
+				    } else {
+				      pos++; //Otherwise, change 1 degree
+				      fromTop++; //And go down one pixel
+				      element.style.transform = "rotate(" + pos + "deg)"; //Actual rotation moment
+				      element.style.left = pos + 'px'; //Actual go right moment
+				      element.style.top = fromTop + 'px'; //Actual go down moment
+				    }
+			      }
+		    }
+		    function handleClick(){
+			  var element = document.getElementById("shape"); //Get div element
+			  element.style.background = "transparent"; //Make background transparent.
+			  element.style.height = "0px"; //No height
+			  element.style.width = "0px"; //No width
+			  element.style.borderLeft = "50px solid transparent"; //Make border left solid, and make it 50px
+			  element.style.borderRight = "50px solid transparent"; //Make border right solid, and make it 50px
+			  element.style.borderBottom = "100px solid green"; //Make base the longest, and also solid. Change color to green
+		    }
 		</script>
 		
 	</body>
