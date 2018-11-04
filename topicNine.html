@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="MyProject">
+    <title>My Project</title>
+
+    <body>
+        <h1>9. Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events </h1>
+		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
+		
+		<p id="personalData"></p>
+
+        <canvas id="canvas1" width="500" height="500"></canvas>
+        
+		<script>
+            var can = document.getElementById('canvas1');
+            var ctx = can.getContext('2d');
+
+
+            can.addEventListener( 'touchstart', onTouchStart, false);
+
+            function onTouchStart(e) {
+             ctx.fillRect(0,0,300,300);   
+
+            }
+		</script>
+		
+	</body>
+  </head>
+</html>
