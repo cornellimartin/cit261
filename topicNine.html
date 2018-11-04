@@ -9,19 +9,26 @@
         <h1>9. Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events </h1>
 		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
 		
-		<p id="personalData">Hacé que andeeee!! Tocá acáaaaa</p><br>
+		<p id="personalData">Ya me aburrió pero no me queda otra...</p><br>
 
-       		<div id="heart"></div><br>
+       		<canvas id="heart" width="300" height="231"></canvas><br>
         
 		<script>
-		    document.getElementById("personalData").addEventListener("touchstart", addImage);
+		    document.getElementById("heart").addEventListener("touchstart", addImage);
 		    function addImage()
 		    {
-			var elem = document.createElement("img");
-			elem.src = 'images/Heart.jpg';
-			elem.setAttribute("height", "100");
-			elem.setAttribute("width", "100");
-			document.getElementById("heart").appendChild("elem");
+                  var img = new Image();
+                  img.src = 'Heart.JPG';
+
+                  img.onload = function () {
+                      // CREATE CANVAS CONTEXT.
+                      var canvas = document.getElementById('heart');
+                      var ctx = canvas.getContext('2d');
+                      canvas.width = img.width;
+                      canvas.height = img.height;
+
+                      ctx.drawImage(img, 10, 10);  // DRAW THE IMAGE TO THE CANVAS.
+                   }
 		    }
 		</script>
 	</body>
