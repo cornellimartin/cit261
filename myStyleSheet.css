@@ -11,5 +11,13 @@ div{
 }
 
 #div.appear{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px;
+    transform: rotate(0deg);
     visibility: visible;
 }
