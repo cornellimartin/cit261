@@ -3,21 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="MyProject">
+    <link rel="stylesheet" type="text/css" href="myStyleSheet.css">
     <title>My Project</title>
 
     <body>
         <h1>9. Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events </h1>
 		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
 		
-		<p id="myP">Esto es más básico de lo que yo quería...pero bue, tocá acá y a ver lo último que intento hoy</p><br><br>
+		<p id="myP">PLACE AND HOLD YOUR FINGER IN THIS TEXT. ONCE YOU SEE THE RED SQUARE, RELEASE IT.</p><br><br>
 
-        <p id="demo"></p>
+        <div id="square"></div>
 
             <script>
                 document.getElementById("myP").addEventListener("touchstart", myFunction);
 
                 function myFunction() {
-                  document.getElementById("demo").innerHTML = "TE AMO MI HIPPIYA!!!!";
+                  document.getElementById("square").classList.add('appear');
                 }
             </script>
 	</body>
