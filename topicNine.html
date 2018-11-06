@@ -6,19 +6,48 @@
     <link rel="stylesheet" type="text/css" href="myStyleSheet.css">
     <title>My Project</title>
 
-    <body>
+    <body onload="welcomeMessage()"> <!--Will display an alert with a welcome message-->
         <h1>9. Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events </h1>
 		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
 		
-		<p id="myP">PLACE AND HOLD YOUR FINGER IN THIS TEXT. ONCE YOU SEE THE RED SQUARE, RELEASE IT. (Updated)</p><br><br>
+		<p id="myP">PLACE AND HOLD YOUR FINGER IN THIS TEXT. ONCE YOU SEE THE RED SQUARE, RELEASE IT, AND IT WILL MOVE</p><br><br>
 
-        <div id="square"></div>
+        <div id="square"></div><br>
+        
+        <p id="move">Touch here and drag to see something</p>
 
             <script>
-                document.getElementById("myP").addEventListener("touchstart", myFunction);
+                document.getElementById("myP").addEventListener("touchstart", showUp);//Will call the function to make the square appear when myP paragraph is touched
+                document.getElementById("myP").addEventListener("touchend", modify);//Will call the function to make the square move once finger is dropped from paragraph
+                document.getElementById("move").addEventListener("touchmove", textAppear);//Will call the function to make text appear when move paragraph is touched
 
-                function myFunction() {
-                  document.getElementById("square").classList.add('appear');
+                function showUp() {
+                  document.getElementById("square").classList.add('appear');//Will make a square appear.
+                }
+                
+                //Similar to topic eight but simpler.
+                function modify(){
+                      var element = document.getElementById("square");
+                      var pos = 0;
+                      var speed = setInterval(move, 5);
+                      function move() {
+                            if (pos == 360) {
+                              clearInterval(speed);
+                            } else {
+                              pos++; 
+                              element.style.left = pos + 'px';
+                            }
+                      }
+                }
+                
+                function textAppear(){
+                        var x = event.touches[0].clientX;
+                        var y = event.touches[0].clientY;
+                        document.getElementById("move").innerHTML = "You have dragged your finger!";
+                }
+                
+                function welcomeMessage(){
+                    alert("WELCOME TO TOPIC 9"); // Function for the alert pop up.
                 }
             </script>
 	</body>
