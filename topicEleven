@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="CIT261">
+	<link rel="stylesheet" type="text/css" href="customize.css">
+    <title>My Project</title>
+    <body>
+        
+        <h1>11. Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</h1>
+		<h2 id="welcomeMessage">Drag your mouse all over until you find what's hidden</h2>	
+        
+        <div></div>
+        
+    </body>
+  </head>
+</html>  
