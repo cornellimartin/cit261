@@ -13,9 +13,9 @@ div{
     margin-left: 110px;
     background-color: white;
     position: absolute;
-    transition: background-color 2s;
+    transition: background-color 2s; // This transition will change the background color in 2 seconds.
 }
 
 div:hover{
-    background-color: red;
+    background-color: red; // It will go from white to red.
 }
