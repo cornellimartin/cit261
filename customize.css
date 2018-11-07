@@ -17,7 +17,6 @@ div{
     visibility: hidden;
     transition: background-color 2s, visibility 2s;
 }
-
 div:hover{
     background-color: red;
     visibility: visible;
