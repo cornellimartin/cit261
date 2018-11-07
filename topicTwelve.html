@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="CIT261">
+    <title>My Project</title>
+    
+    <body>
+        
+        <h1>11. Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library)</h1>
+		<h2 id="welcomeMessage">Place your cursor or tap where the arrow indicates</h2>	
+        
+        <!--Below div will reflect transform-->
+        <div></div>
+        
+        <style>
+            h1 {
+                color: green;
+            } 
+
+            h2 {
+                color: maroon;
+                margin-left: 40px;
+            } 
+            
+            div{
+                height: 100px;
+                width: 100px;
+                margin-left: 100px;
+                margin-top: 100px;
+                background-color: red;
+                position: absolute;
+                display: inline-block;
+                transition: transform 2s; 
+            }
+            
+            div:hover{
+                transform: scale(2, 2) rotate(180deg); /*Will double the size, both for width and height, and rotate at the same time*/
+            }
+        </style>
+        
+    </body>
+  </head>
+</html>  
