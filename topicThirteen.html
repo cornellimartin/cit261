@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="CIT261">
+    <title>My Project</title>
+    
+    <body>
+        
+        <h1>11. Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library)</h1>
+		<h2 id="welcomeMessage">Place your cursor or tap where the arrow indicates</h2>	
+        
+
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+        
+        <style>
+            h1 {
+                color: green;
+            } 
+
+            h2 {
+                color: maroon;
+                margin-left: 40px;
+            } 
+            
+            .left {
+                height: 100px;
+                width: 100px;
+                margin-top: 200px;
+                background-color: blue;
+                position: absolute;
+                animation-name: left;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            
+            .right {
+                height: 100px;
+                width: 100px;
+                margin-left: 600px;
+                margin-top: 200px;
+                background-color: blue;
+                position: absolute;
+                animation-name: right;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            
+            .top {
+                height: 100px;
+                width: 100px;
+                margin-left: 300px;
+                background-color: blue;
+                position: absolute;
+                animation-name: top;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            
+            .bottom {
+                height: 100px;
+                width: 100px;
+                margin-left: 300px;
+                margin-top: 400px;
+                background-color: blue;
+                position: absolute;
+                animation-name: bottom;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            
+           @keyframes left {
+                50%  {background-color:yellow; margin-left:0px; margin-top:200px;}
+                100%  {background-color:blue; margin-left:300px; margin-top:200px;}
+            }
+            
+            @keyframes right {
+                50%  {background-color:yellow; margin-left:600px; margin-top:200px;}
+                100%  {background-color:blue; margin-left:300px; margin-top:200px;}
+            }
+            
+            @keyframes top {
+                50%  {background-color:yellow; margin-left:300px; margin-top:0px;}
+                100%  {background-color:blue; margin-left:300px; margin-top:200px;}
+            }
+            
+            @keyframes bottom {
+                50%  {background-color:yellow; margin-left:300px; margin-top:400px;}
+                100%  {background-color:blue; margin-left:300px; margin-top:200px;}
+            }
+
+        </style>
+        
+    </body>
+  </head>
+</html>  
