@@ -3,31 +3,61 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Explorando y Aprendiendo HTML">
-	<link rel="stylesheet" type="text/css" href="customize.css">
     <title>My Project</title>
 
     <body>
         <h1>4. Using XMLHTTPRequest to Consume a JSON Web Service</h1>
-		<h2 id="welcomeMessage">I'm now going to demo the topics in above's header</h2>	
+		<h2 id="welcomeMessage">Request temperature in Celsius degrees</h2>	
 		
 		<p id="personalData"></p>
+        
+        <p class="Instruction" id="personalData">Enter City Name and Country Code with the format in the box in the format shown below:</p>
+        <input type="text" id="city" placeholder="Montevideo, UY"><br>
+        <button onClick="addCity()">Submit</button><br><br>
+        
 
 		<script>
-			/***************************************************************************************************
-			* Most common structure for XMLHTTPRequest object, from https://www.w3schools.com/xml/xml_http.asp
-			***************************************************************************************************/
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-				   // Typical action to be performed when the document is ready:
-                    var ipAddress = JSON.parse(xhttp.responseText);
-                    
-                    document.getElementById("personalData").innerHTML = "Your IP address is: " + ipAddress.ip ;
-				}
-			};
-			xhttp.open("GET", "http://ip.jsontest.com/", true);
-			xhttp.send();
+            function addCity(){
+                var data = document.getElementById("city").value; // Receive city and country from user input
+                var url = "http://api.openweathermap.org/data/2.5/weather?q="; // Fix URL for API request
+                var apiKey = "&APPID=dd66e694e0d52ba4a1b5e0c95a8a7857&units=metric";//Add my API key, plus unit type to make it Celsius degrees.
+                var finalURL = url.concat(data, apiKey);
+                
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                       // Typical action to be performed when the document is ready:
+                        var text = JSON.parse(xhttp.responseText); 
+
+                        document.getElementById("personalData").innerHTML = text.main.temp; // Show current temperature.
+                    }
+                };
+                xhttp.open("GET", finalURL, true);
+                xhttp.send();
+            }
 		</script>
+        
+        <style>
+            h1 {
+                color: green;
+            } 
+
+            h2 {
+                color: maroon;
+                margin-left: 40px;
+            } 
+            p {
+                color: red;
+                font-family: cursive;
+                font-size: 16px;
+            }
+            .Instruction{
+                color: black;
+                font-weight: bold;
+                font-family: sans-serif;
+                font-size: 12px;
+            }
+        </style>
 		
 	</body>
   </head>
