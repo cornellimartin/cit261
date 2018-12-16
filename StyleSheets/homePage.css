@@ -1,0 +1,75 @@
+.mainMenu{
+    height: 200px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    background-color: white;
+    margin: 0px;
+}
+
+.subLogo{
+    top:0; left:100px; right:0; bottom:0; 
+    margin:auto;
+    position: absolute;
+}
+
+.mainLogo{
+    display: block;
+    margin: auto;
+    height: 200px;
+    top: 0;
+    right: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.hiddenMenu{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.displayedMenu{
+    display: block;
+}
+
+.displayedMenu a{
+    color: black;
+    font-weight: bold;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: burlywood;
+    width: 50px;
+}
+
+.displayedMenu a:hover{
+    background-color: lightgray;
+}
+
+.mainImage {
+    height: 600px;
+    width: 100%;
+    background-image: url("../Images/background-ceci.jpg");
+}
+
+.quote{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.weather{
+    position: absolute;
+    right: 100px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 15px;
+    color: burlywood;
+    font-family: cursive;
+}
