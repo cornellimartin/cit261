@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Virbell">
+    <link rel="stylesheet" type="text/css" href="../StyleSheets/homePage.css">
+    <title>My Project</title>
+
+    <body>
+        <div class="mainMenu">
+            <img src="../Images/menu.svg" alt="menu" onClick="displayMenu()">
+            <!--<div class="subLogo">
+                <p class="weather">TEST</p>
+                <img src="../Images/logo.jpg" alt="log" class="mainLogo">
+            </div>-->
+            <div id="menuDiv" class="hiddenMenu">
+                <a href="#home">Home</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="subLogo">
+            <img src="../Images/logo.jpg" alt="log" class="mainLogo">
+        </div>
+        <div class="weather">
+            <p id="weatherConditions"></p>
+            <p id="temp"></p>
+        </div>
+        
+        <div class="mainImage"></div>
+        
+        <p class="quote">“In photography there is a reality so subtle that it becomes more real than reality.” ...</p>
+        
+        <script type="text/javascript" src="../JS/handleHome.js"></script> 
+        
+    </body>
+  </head>
+</html>
