@@ -22,3 +22,31 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", finalURL, true);
 xhttp.send();
+
+function goHome(){
+    document.getElementById("home").style.display = "block";
+    document.getElementById("gallery").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+}
+
+function goGallery(){
+    document.getElementById("gallery").style.display = "block";
+    document.getElementById("home").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+}
+
+function goAbout(){
+    document.getElementById("about").style.display = "block";
+    document.getElementById("home").style.display = "none";
+    document.getElementById("gallery").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+}
+
+function goContact(){
+    document.getElementById("contact").style.display = "block";
+    document.getElementById("home").style.display = "none";
+    document.getElementById("gallery").style.display = "none";
+    document.getElementById("about").style.display = "none";
+}
