@@ -7,6 +7,7 @@
     <title>My Project</title>
 
     <body>
+    <div id="home">
         <div class="mainMenu">
             <img src="../Images/menu.svg" alt="menu" onClick="displayMenu()">
             <!--<div class="subLogo">
@@ -14,10 +15,10 @@
                 <img src="../Images/logo.jpg" alt="log" class="mainLogo">
             </div>-->
             <div id="menuDiv" class="hiddenMenu">
-                <a href="#home">Home</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" onClick="goHome()">Home</a>
+                <a href="#gallery" onClick="goGallery()">Gallery</a>
+                <a href="#about" onClick="goAbout()">About</a>
+                <a href="#contact" onClick="goContact()">Contact</a>
             </div>
         </div>
         <div class="subLogo">
@@ -33,7 +34,15 @@
         <p class="quote">“In photography there is a reality so subtle that it becomes more real than reality.” ...</p>
         
         <script type="text/javascript" src="../JS/handleHome.js"></script> 
-        
+    </div>  
+    
+        <div id="gallery">
+            <div class="page2"></div>
+        </div>
+        <div id="about">
+        </div>
+        <div id="contact">
+        </div>
     </body>
   </head>
 </html>
