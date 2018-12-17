@@ -1,3 +1,40 @@
+/*IDEA ON PAGE AND ACTIVE CLASSES
+TAKEN FROM https://www.youtube.com/watch?v=wlVmmsMD28w
+*/
+
+#home{
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gallery{
+    display: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+}
+
+.page2{
+    background-color: red;
+}
+
+#about{
+    display: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact{
+    display: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .mainMenu{
     height: 200px;
     width: 100%;
@@ -52,7 +89,8 @@
 
 .mainImage {
     height: 600px;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     background-image: url("../Images/background-ceci.jpg");
 }
 
