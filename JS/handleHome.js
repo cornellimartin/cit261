@@ -1,10 +1,11 @@
-function displayMenu() { 
+function displayMenu() {
     var show = document.getElementById("menuDiv");
     if (show.classList.contains("hiddenMenu")){
         show.classList.replace("hiddenMenu", "displayedMenu");
     }else{
         show.classList.replace("displayedMenu", "hiddenMenu"); 
     }
+    event.stopPropagation();
 }
 
 var finalURL = "https://api.apixu.com/v1/forecast.json?key=a80c870049394166a9d33921181412&q=Montevideo";
@@ -22,6 +23,7 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", finalURL, true);
 xhttp.send();
+
 
 function goHome(){
     document.getElementById("home").style.display = "block";
@@ -49,4 +51,27 @@ function goContact(){
     document.getElementById("home").style.display = "none";
     document.getElementById("gallery").style.display = "none";
     document.getElementById("about").style.display = "none";
+}
+
+function hide(){
+    var show = document.getElementById("menuDiv");
+    if (show.classList.contains("displayedMenu")){
+        show.classList.replace("displayedMenu", "hiddenMenu"); 
+    }
+}
+
+function save_data() {
+    var name = document.getElementById("getInfo")[0].value;
+    var lastName = document.getElementById("getInfo")[1].value;
+    
+    localStorage.setItem("name", name);
+    localStorage.setItem("lastName", lastName);
+}
+
+function welcome(){
+    if (localStorage.getItem("name") != null || localStorage.getItem("lastName") != null){
+        var welcomeMessage = "Welcome back " + localStorage.getItem("name") + " " + localStorage.getItem("lastName");
+
+        alert(welcomeMessage);
+    }
 }
