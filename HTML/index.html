@@ -8,7 +8,7 @@
 
     <body>
     <div class="mainMenu">
-          <img src="../Images/menu.svg" alt="menu" onClick="displayMenu()">
+          <img src="../Images/menu.svg" alt="menu" onClick="displayMenu()" class="button">
           <div id="menuDiv" class="hiddenMenu">
               <a href="#home" onClick="goHome()">Home</a>
               <a href="#gallery" onClick="goGallery()">Gallery</a>
@@ -30,7 +30,7 @@
         
         <script type="text/javascript" src="../JS/handleHome.js"></script> 
     </div>  
- 
+    
         <div id="gallery">
             <div class="page2">
                 <img src="../Images/hideAndSeek.jpg" alt="pic1" id="pic1">
@@ -39,10 +39,16 @@
            </div> 
         </div>
         <div id="about">
-            <p>
-                My name is Virginia. I'm a 29 year-old wife and mother.
-                I believe family to be the most important social unit, which is why I decided to stay home to raise our daughter, which also gives me the time I need to develop my greatest passion, which is photography.
-            </p>
+            <div class="page3">
+                <p>
+                    My name is Virginia. I'm a 29 year-old wife and mother.
+                    I believe family to be the most important social unit, which is why I decided to stay home to raise our daughter, which also gives me the time I need to develop my greatest passion, which is photography.
+                </p>
+                <div class="page3image">
+                    <img src="../Images/camera.jpg" alt="cam" id="cam">
+                </div>
+            </div>
+            
         </div>
         <div id="contact">
         </div>
