@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../StyleSheets/homePage.css">
     <title>My Project</title>
 
-    <body>
+    <body onload="welcome()" onClick="hide()">
     <div class="mainMenu">
-          <img src="../Images/menu.svg" alt="menu" onClick="displayMenu()" class="button">
+          <img src="../Images/menu.svg" alt="menu" onClick="displayMenu()">
           <div id="menuDiv" class="hiddenMenu">
               <a href="#home" onClick="goHome()">Home</a>
               <a href="#gallery" onClick="goGallery()">Gallery</a>
@@ -30,7 +30,7 @@
         
         <script type="text/javascript" src="../JS/handleHome.js"></script> 
     </div>  
-   
+    
         <div id="gallery">
             <div class="page2">
                 <img src="../Images/hideAndSeek.jpg" alt="pic1" id="pic1">
@@ -55,12 +55,12 @@
                 <form id="getInfo">
                         <label>Name:</label><input type="text" name="name" placeholder="John">
 
-                        <label>Last name:</label><input type="text" name="age" placeholder="Smith">
+                        <label>Last name:</label><input type="text" name="lastName" placeholder="Smith">
 
                         <label>Email address: </label><input type="text" name="email" placeholder="john.smith@myemail.com">
 
                     <label>Message:</label><textarea rows="20" cols="50" placeholder="I want more info..."></textarea>
-                    <button>Send</button>
+                    <button onClick="save_data()">Send</button>
 	   	       </form> 
             </div>
         </div>
