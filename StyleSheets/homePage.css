@@ -32,7 +32,7 @@
 }
 
 .page3image{
-    margin-left: 25%;
+    margin-left: 35%;
     position: absolute;
     top: 320px;
     width: 100%;
@@ -43,6 +43,19 @@
     text-align: center;
     position: absolute;
 }
+
+.page4{
+    top: 200px;
+    position: absolute;
+    width: 100%;
+    height: 600px;
+}
+
+.page4 form{
+    width:50%; 
+    margin:0 auto;
+}
+
 
 #about{
     display: none;
@@ -136,6 +149,29 @@ p {
     font-family: cursive;
 }
 
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+input {
+  display: inline-block;
+  float: left;
+}
+
+textarea {
+  display: inline-block;
+  float: left;
+}
+
+button{
+    position: absolute;
+    top: 370px;
+    left: 730px;
+}
+
 /*ALL MOBILE*/
 @media screen and (max-width: 768px){
    .mainLogo{
@@ -150,7 +186,7 @@ p {
 }
 .page3image{
     position: absolute;
-    top: 180px;
+    top: 200px;
     margin-left:auto;
 }
 
@@ -158,5 +194,10 @@ p {
     font-size: 18px;
     text-align: center;
     position: absolute;
+}
+button{
+    position: absolute;
+    top: 450px;
+    left: 90px;
 }
 }
