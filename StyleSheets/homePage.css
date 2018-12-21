@@ -1,6 +1,7 @@
 /*******************PAGES*****************************
 * The 4 blocks below define pages. To hide and display
 ******************************************************/
+
 #home{
     display: block;
     width: 100%;
@@ -63,7 +64,19 @@
     font-size: 40px;
     text-align: center;
     position: absolute;
+    display: block;
+    animation-name: color;
+    animation-duration: 20s;
 }
+
+/* Make paragraph and image appear */
+@keyframes color {
+  0% {color: burlywood;}
+  25% {color: blueviolet;}
+  50% {color: burlywood;}
+  100% {color: blueviolet;}
+}
+
 
 .page4{
     top: 200px;
