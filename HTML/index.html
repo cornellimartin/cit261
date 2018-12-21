@@ -2,11 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--This meta tag makes the page look good in mobile devices-->
+    <!--Below is the link to the CSS file-->
     <link rel="stylesheet" type="text/css" href="../StyleSheets/homePage.css">
+    <script type="text/javascript" src="../JS/handleHome.js"></script> 
+      <!--Below is link to external Javascript file-->
+    
     <title>My Project</title>
 
+    <!--On body load a welcome message is displayed if you have submitted your name and/or last name in the messages section under Contact page.
+    onClick in any part of the body of the page will hide the menu if it's displayed-->
     <body onload="welcome()" onClick="hide()">
+    
+    <!--Main menu will be hidden, and displayed when the menu icon is clicked-->
     <div class="mainMenu">
           <img src="../Images/menu.svg" alt="menu" onClick="displayMenu()">
           <div id="menuDiv" class="hiddenMenu">
@@ -23,12 +31,12 @@
           <p id="weatherConditions"></p>
           <p id="temp"></p>
      </div>
+    <!--All the above is supposed to show in all sub pages. From this point down, there are divs with the names of each page. The idea (I learned this from James Clarke), is to make each page a div. That way, when the page is clicked in the menu, I hide the currently visible div and all the others, and display the one clicked on.-->
     <div id="home">
         <div class="mainImage"></div>
         
         <p class="quote">“In photography there is a reality so subtle that it becomes more real than reality.” ...</p>
         
-        <script type="text/javascript" src="../JS/handleHome.js"></script> 
     </div>  
     
         <div id="gallery">
@@ -52,6 +60,7 @@
         </div>
         <div id="contact">
             <div class="page4">
+                <!--The form below is just front end technology. I plan to make it work next semester when I take CS313-->
                 <form id="getInfo">
                         <label>Name:</label><input type="text" name="name" placeholder="John">
 
@@ -59,8 +68,8 @@
 
                         <label>Email address: </label><input type="text" name="email" placeholder="john.smith@myemail.com">
 
-                    <label>Message:</label><textarea rows="20" cols="50" placeholder="I want more info..."></textarea>
-                    <button onClick="save_data()">Send</button>
+                    <label>Message:</label><textarea rows="1" cols="21" placeholder="I want more info..." id="textArea"></textarea>
+                    <input type="button" value="Send" class="button" id="button" onClick="save_data()"/>
 	   	       </form> 
             </div>
         </div>
