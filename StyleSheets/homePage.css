@@ -1,3 +1,7 @@
+/*******************PAGES*****************************
+* The 4 blocks below define pages. To hide and display
+******************************************************/
+
 #home{
     display: block;
     width: 100%;
@@ -12,6 +16,24 @@
     margin-right: auto;
 }
 
+#about{
+    display: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact{
+    display: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*******************PAGES************************
+* The ones below are also for pages but based
+* on the space needed by the content to be added
+************************************************/
 .page2{
     top: 200px;
     position: absolute;
@@ -56,21 +78,9 @@
     margin:0 auto;
 }
 
-
-#about{
-    display: none;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contact{
-    display: none;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/*******************TOP***********************************
+* This is the top block of the page, which doesn't change
+*********************************************************/
 .mainMenu{
     height: 200px;
     width: 100%;
@@ -96,7 +106,6 @@
     margin-left: auto;
 }
 
-
 .hiddenMenu{
     display: none;
     position: absolute;
@@ -118,6 +127,7 @@
     display: block;
     background-color: burlywood;
     width: 50px;
+    height: 15px;
 }
 
 .displayedMenu a:hover{
@@ -167,37 +177,53 @@ textarea {
 }
 
 button{
-    position: absolute;
-    top: 370px;
-    left: 730px;
+    position: relative;
+    bottom: 6px;
+    left: 2px;
 }
 
-/*ALL MOBILE*/
+/**************ALL MOBILE*********************
+* Below section applies only to small devices
+**********************************************/
 @media screen and (max-width: 768px){
-   .mainLogo{
-    display: block;
-    margin: auto;
-    height: 200px;
-    width: 150px;
-    top: 0;
-    right: 100px;
-    margin-right: auto;
-    margin-left: 0px;
-}
-.page3image{
-    position: absolute;
-    top: 200px;
-    margin-left:auto;
-}
+       .mainLogo{
+        display: block;
+        margin: auto;
+        height: 200px;
+        width: 150px;
+        top: 0;
+        right: 100px;
+        margin-right: auto;
+        margin-left: 0px;
+    }
+    .page3image{
+        position: absolute;
+        top: 200px;
+        margin-left:auto;
+    }
 
-.page3 p{
-    font-size: 18px;
-    text-align: center;
-    position: absolute;
-}
-button{
-    position: absolute;
-    top: 450px;
-    left: 90px;
-}
+    .page3 p{
+        font-size: 18px;
+        text-align: center;
+        position: absolute;
+    }
+    input {
+      display: inline-block;
+      float: left;
+      border: solid black;
+      border-width: thin;
+    }
+
+    textarea {
+      display: inline-block;
+      float: left;
+      border-width: thin;
+      border: solid black;
+    }
+    label{
+        width: 10%; 
+    }
+     .page4 form{
+        position:absolute;
+    }
 }
